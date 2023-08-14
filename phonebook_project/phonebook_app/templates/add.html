@@ -1,0 +1,25 @@
+{%extends 'basic.html'%}
+{%block css%}
+body {
+    position: relative;
+}
+#form-wrapper {     
+    width: 300px;        
+    height: 250px;       
+    position: absolute;
+    top: 500%;
+    left: 40%;
+    align:center;
+}
+{%endblock%}
+{% block body %}
+<div id="form-wrapper" style="background-color:#202020; border-radius:20px">
+<form method="post" action="{% url 'add_entry' %}">
+    {% csrf_token %}
+    <label for="name" style="color:white; margin-top:30px; margin-left:120px">Name</label>
+    <input type="text" id="name" style="margin-top:5px; margin-left:50px" name="name">
+    <label for="phone_number" style="margin-top:10px; margin-left:90px; color:white;">Phone Number</label>
+    <input type="text" id="phone_number" style="margin-top:5px; margin-left:50px" name="phone_number">
+    <input type="submit" class="btn btn-sm btn-outline-success" style="margin-top:30px; margin-left:100px" value="Add Entry">
+</form>
+{% endblock %}

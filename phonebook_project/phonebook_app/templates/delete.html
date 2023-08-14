@@ -1,0 +1,24 @@
+{%extends 'basic.html'%}
+{%block css%}
+body {
+    position: relative;
+}
+#form-wrapper {     
+    width: 300px;        
+    height: 200px;       
+    position: absolute;
+    top: 500%;
+    left: 40%;
+    align:center;
+}
+{%endblock%}
+{% block body %}
+<div id="form-wrapper" style="background-color:#202020; border-radius:20px">
+<form method="post" action="{% url 'delete_entry' %}">
+    {% csrf_token %}
+    <label for="delete_name" style="color:white; margin-top:50px; margin-left:90px">Delete by Name:</label>
+    <input type="text" id="delete_name" style="margin-top:8px; margin-left:20px;" name="delete_name">
+    <input type="submit" class="btn btn-sm btn-outline-success" value="Delete">
+</form>
+</div>
+{% endblock %}

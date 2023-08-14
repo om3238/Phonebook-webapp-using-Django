@@ -1,0 +1,31 @@
+    {%extends 'basic.html'%}
+    {% block css %}
+    th{
+        background-color:gray;
+        border-radius:20px;
+        color:white;
+    }
+    td{
+        background-color:gray;
+        border-radius:20px;
+        color:white;
+    }
+    {%endblock%}
+    
+    {% block body %}
+
+
+    <div class="container px-4 text-center">
+        {% for entry in entries %}
+        <div class="row gx-5">
+          <div class="col">
+           <div class="p-3 my-3" style="background-color:#202020; color:white; border-radius:8px;" >{{ entry.name }}</div>
+          </div>
+          <div class="col">
+            <div class="p-3 my-3" style="background-color:#202020; color:white;  border-radius:8px;">{{ entry.phone_number }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    {%endblock%}
