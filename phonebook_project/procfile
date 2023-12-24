@@ -1,0 +1,1 @@
+web: gunicorn phonebook_project.wsgi --log-file -
